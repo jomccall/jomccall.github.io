@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Clean Blog - Start Bootstrap Theme</title>
+        <title>Introduction to the Census API in Python</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
@@ -35,17 +35,17 @@
             </div>
         </nav>
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/industry.jpg')">
+        <header class="masthead" style="background-image: url('assets/img/census.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="post-heading">
-                            <h1>Industry in Middle Tennessee</h1>
-                            <h2 class="subheading">What are the strong suits of the industry mix in our region? Where is there opportunity for growth? What kind of flux in industry can we see through examining expansion and layoff data? Find an exploration of this below.</h2>
+                            <h1>Using Python to Access the Census API</h1>
+                            <h2 class="subheading">An example project</h2>
                             <span class="meta">
                                 Updated by
                                 <a href="#!">Joanna McCall</a>
-                                on August 27, 2021
+                                on January 12, 2022
                             </span>
                         </div>
                     </div>
@@ -57,7 +57,29 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>The most reliable and standard way to monitor industry growth is through the Bureau of Labor Statistics Quarterly Census of Employment and Wages.</p>
+                        <p>
+                          The Census Bureau is the definitive source for data about the US people; the demographic and economic landscape of the country.
+                          This is common knowledge to anyone who is seeking information on how to access Census data via their API, so instead of an introduction to the Bureau I'll set
+                          the scene for a sample project.
+                        </p>
+
+                        <p>
+                          Let's say we're curious about the growth in the share of foreign born children in the Nashville area. Maybe we are determining how to disperse resources for
+                          non-native English speakers in the public school systems, perhaps we are curious about the growth of our local immigrant community, or some multitude of other reasons
+                          that this could be a topic of interest. The first step is to formalize our question and determine what kind of data is needed to answer it.
+                        </p>
+
+                        <blockquote class="blockquote">
+                        <p>
+                          Question: How has the share of foreign born individuals under the age of 18 changed in the Nashville region over time?
+                          Data needed: we will need the number of foreign born individuals under 18 as well as the total population under the age of
+                          18 and the total population for the years in question.
+                        </p>
+                        </blockquote>
+
+                        <p>
+                          Let's begin by getting the last two available, non-overlapping, 5 Year American Community Survey Estimates. </p>
+
                         <h2 class="section-heading">Monitoring QCEW Data</h2>
                         <div class='tableauPlaceholder' id='viz1631644024925' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;QC&#47;QCEWDashboard&#47;IndustrybyCounty&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='QCEWDashboard&#47;IndustrybyCounty' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;QC&#47;QCEWDashboard&#47;IndustrybyCounty&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1631644024925');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} else { vizElement.style.width='100%';vizElement.style.height='2027px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 </iframe>
